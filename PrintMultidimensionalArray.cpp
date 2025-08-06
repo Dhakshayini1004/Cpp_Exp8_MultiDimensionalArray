@@ -8,18 +8,22 @@ PRN : 24070123039
 using namespace std;
 
 int main(){
-    //Multi Dimensional Array
-    int array[3][2];
+    //Defining a Multi Dimensional Array
+    int m,n;
+    cout<<"Enter number of rows and columns :"<<endl;
+    cin>>m;
+    cin>>n;
+    int array[m][n];
     
-    for(int i = 0; i < 3 ; i++){
-        for(int j = 0; j < 2; j++){
+    for(int i = 0; i < m ; i++){
+        for(int j = 0; j < n; j++){
             printf("Enter the element[%d][%d] :\n",i,j);
             cin>>array[i][j];
         }
     }
     
-    for(int i = 0; i < 3; i++){
-        for(int j = 0; j<2; j++){
+    for(int i = 0; i < m; i++){
+        for(int j = 0; j<n; j++){
             cout<<array[i][j]<<"\t";
         }
         cout<<endl;
@@ -29,20 +33,22 @@ int main(){
     return 0;
 }
 
-/*Sample Output: 
+/*Enter number of rows and columns :
+3
+2
 Enter the element[0][0] :
-66
+33
 Enter the element[0][1] :
-77
-Enter the element[1][0] :
-88
-Enter the element[1][1] :
 44
+Enter the element[1][0] :
+55
+Enter the element[1][1] :
+66
 Enter the element[2][0] :
 77
 Enter the element[2][1] :
-55
-66	77	
-88	44	
-77	55
+88
+33	44	
+55	66	
+77	88	
 */
