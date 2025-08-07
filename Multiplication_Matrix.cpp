@@ -63,7 +63,7 @@ int main(){
         for(int j = 0; j<n2; j++){
             Prod[i][j] = 0;
             for(int k = 0 ; k < n1 ; k++){
-            Prod[i][j] += matrix1[i][k] + matrix2[k][j];
+            Prod[i][j] += matrix1[i][k] * matrix2[k][j];
             }
             cout<<Prod[i][j]<<"\t";
         }
