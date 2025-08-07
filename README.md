@@ -32,7 +32,6 @@ A multidimensional array is an array of arrays. The most common form is the 2D a
 **Syntax:**  
 ```cpp
 datatype arrayName[rows][columns];
-int Array[m][n];
 ```
 
 ### Accessing Elements  
@@ -41,14 +40,76 @@ Elements are accessed using two indices:
 array[i][j]; // i = row index, j = column index
 ```
 
-### Real-Life and Industrial Applications  
-- Image Processing: Each pixel in an image is stored as matrix elements.  
-- Scientific Simulations: Multidimensional arrays model physical systems or simulations.  
-- Game Development: Game boards, tile maps, and level design use 2D arrays.  
-- Finance: Used in Excel-like data modeling for profits, expenses, inventory.  
-- Embedded Systems: Store sensor data in structured rows and columns.  
-- Machine Learning: Datasets and matrices are core to training algorithms.  
-- Control Systems: Used for matrix operations in robotics, automation, and signal processing.
+---
+
+### Structure and Memory Representation of 2D Arrays  
+2D arrays in C++ are stored in **row-major order**, where rows are stored one after the other in memory.
+
+For example, the array `int a[2][3]` is stored internally as:
+```
+a[0][0], a[0][1], a[0][2], a[1][0], a[1][1], a[1][2]
+```
+This knowledge helps optimize access speed and pass arrays efficiently to functions.
+
+---
+
+### Difference Between 1D and 2D Arrays  
+
+| Feature             | 1D Array        | 2D Array                |
+|---------------------|------------------|--------------------------|
+| Representation      | Linear           | Matrix/Table             |
+| Syntax              | `a[5]`           | `a[3][4]`                |
+| Memory Access       | Single index     | Nested indexing          |
+| Applications        | Linear data      | Grids, image pixels, etc |
+
+---
+
+### Types of Matrix Operations  
+
+#### 1. **Matrix Addition**  
+Performed element-wise:  
+```cpp
+C[i][j] = A[i][j] + B[i][j];
+```
+Condition: Number of rows and columns must be the same in both matrices.
+
+#### 2. **Matrix Multiplication**  
+Each element in the result is a dot product of row and column:  
+```cpp
+C[i][j] = A[i][0] × B[0][j] + A[i][1] × B[1][j] + ... ;
+```
+Condition: Number of columns in first matrix must equal number of rows in second matrix.
+
+#### 3. **Matrix Transpose**  
+Swapping rows and columns:  
+```cpp
+C[i][j] = A[j][i];
+```
+
+#### 4. **Diagonal Sum**  
+- **Principal Diagonal**: Elements where row index = column index → `A[i][i]`
+- **Secondary Diagonal**: Elements where `i + j = n - 1` → `A[i][n-1-i]` (only for square matrices)
+
+---
+
+### Common Errors and Limitations  
+
+- Accessing out-of-bound indices leads to **undefined behavior**.
+- Performing addition or multiplication on **incompatible matrix sizes**.
+- Forgetting to initialize all elements before accessing them.
+- Using large matrix sizes without `dynamic allocation` can lead to **stack overflow**.
+- Assuming diagonals in non-square matrices (which do not have well-defined diagonals).
+
+---
+
+### Edge Cases  
+
+- **Non-square matrix**: Does **not** have a principal or secondary diagonal.
+- **1×1 matrix**: Principal and secondary diagonals are the same.
+- **Zero-sized matrix**: No operations can be performed.
+- **Matrices with one row or one column**: Limited diagonal and multiplication applicability.
+
+
 
 ---
 
