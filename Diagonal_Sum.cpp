@@ -9,15 +9,14 @@ using namespace std;
 
 int main(){
     //Defining a Multi Dimensional Array
-    int m,n;
-    cout<<"Enter number of rows and columns :"<<endl;
+    int m;
+    cout<<"Enter number for rows and columns (diagonal exists only for square matrix) :"<<endl;
     cin>>m;
-    cin>>n;
-    int matrix[m][n];
+    int matrix[m][m];
     
         // User Input
     for(int i = 0; i < m ; i++){
-        for(int j = 0; j < n ; j++){
+        for(int j = 0; j < m ; j++){
             printf("Enter the element of Matrix1[%d][%d] :\n",i,j);
             cin>>matrix[i][j];
         }
@@ -25,7 +24,7 @@ int main(){
     // Printing Matrix
     cout<<"Matrix 1"<<endl;
     for(int i = 0; i < m ; i++){
-        for(int j = 0; j < n ; j++){
+        for(int j = 0; j < m ; j++){
             cout<<matrix[i][j]<<"\t";
         }
         cout<<endl;
@@ -33,7 +32,7 @@ int main(){
     // Diagonal 1
     int diag1_sum = 0;
     for(int i = 0; i < m ; i++){
-        for(int j = 0; j < n ; j++){
+        for(int j = 0; j < m ; j++){
             if(i == j){
                 diag1_sum += matrix[i][j];
             }
@@ -44,8 +43,8 @@ int main(){
     // Diagonal 2
     int diag2_sum = 0;
     for(int i = 0; i < m ; i++){
-        for(int j = 0; j < n ; j++){
-            if(j == n - 1 - i){
+        for(int j = 0; j < m ; j++){
+            if(j == m - 1 - i){
                 diag2_sum += matrix[i][j];
             }
         }
@@ -55,31 +54,30 @@ int main(){
 }
 
 /*Sample Output:
-Enter number of rows and columns :
-3
+Enter number for rows and columns (diagonal exists only for square matrix) :
 3
 Enter the element of Matrix1[0][0] :
-4
+5
 Enter the element of Matrix1[0][1] :
-2
+6
 Enter the element of Matrix1[0][2] :
-55
+7
 Enter the element of Matrix1[1][0] :
-3
+8
 Enter the element of Matrix1[1][1] :
-2
+9
 Enter the element of Matrix1[1][2] :
-6
+2
 Enter the element of Matrix1[2][0] :
-2
+3
 Enter the element of Matrix1[2][1] :
-6
+4
 Enter the element of Matrix1[2][2] :
-2
+5
 Matrix 1
-4	2	55	
-3	2	6	
-2	6	2	
-Diagonal 1 Sum :8
-Diagonal 2 Sum :59
+5	6	7	
+8	9	2	
+3	4	5	
+Diagonal 1 Sum :19
+Diagonal 2 Sum :19
 */
