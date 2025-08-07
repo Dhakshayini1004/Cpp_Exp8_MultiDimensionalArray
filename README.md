@@ -32,6 +32,7 @@ A multidimensional array is an array of arrays. The most common form is the 2D a
 **Syntax:**  
 ```cpp
 datatype arrayName[rows][columns];
+int Array[m][n];
 ```
 
 ### Accessing Elements  
@@ -82,11 +83,6 @@ array[i][j]; // i = row index, j = column index
 - Displays the matrices.  
 - Computes matrix multiplication using nested loops and stores in `Prod[m1][n2]`.  
 - Prints the final matrix result after multiplication.  
-
-> Note: The multiplication logic in this version had an error (`+` used instead of `*`). Ideal implementation should be:  
-```cpp
-Prod[i][j] += matrix1[i][k] * matrix2[k][j];
-```
 
 ---
 
